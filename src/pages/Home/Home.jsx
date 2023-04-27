@@ -10,13 +10,14 @@ import Pagination from "../../components/Pagination/Pagination";
 import { StyledSection, MainTitle } from "./Home.styled";
 import { toast } from "react-toastify";
 
-
 const PAGE_SIZE = 10;
+const FIRST_PAGE = '1';
+
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const page = searchParams.get("page") ?? "1";
+  const page = searchParams.get("page") ?? FIRST_PAGE;
 
   useEffect(() => {
     const getResults = async () => {

@@ -3,18 +3,13 @@ import { toast } from "react-toastify";
 
 class WiseyAPI {
   constructor() {
-    this.id = null;
     this.baseURL = "https://api.wisey.app/api/v1";
   }
-  get courseID() {
-    return this.id;
-  }
-  set courseID(newId) {
-    this.id = newId;
-  }
+
   setToken(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
+
   async getToken() {
     try {
       const res = await axios.get(
@@ -25,6 +20,7 @@ class WiseyAPI {
       toast.error("Something goes wrong.");
     }
   }
+
   async getCourses() {
     try {
       await this.getToken();
@@ -34,12 +30,11 @@ class WiseyAPI {
       toast.error("Something goes wrong.");
     }
   }
-  async getCourseById() {
+
+  async getCourseById(id) {
     try {
       await this.getToken();
-      const res = await axios.get(
-        `${this.baseURL}/core/preview-courses/${this.id}`
-      );
+      const res = await axios.get(`${this.baseURL}/core/preview-courses/${id}`);
       return res.data;
     } catch (error) {
       toast.error("Something goes wrong.");

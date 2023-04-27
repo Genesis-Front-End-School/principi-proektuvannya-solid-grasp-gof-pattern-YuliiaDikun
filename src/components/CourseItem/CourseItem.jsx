@@ -28,7 +28,7 @@ const CourseItem = ({ course }) => {
     function handlePause() {
       player.pause();
     }
-    // You can handle player events here, for example:
+    
     player.on("mouseover", handlePlay);
 
     player.on("mouseout", handlePause);

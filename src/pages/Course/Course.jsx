@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import wiseyAPI from "../../services/genesisAPI";
-import Lesson from "../../components/Lesson/Lesson";
+import LessonsList from "../../components/LessonsList/LessonsList";
 import Loader from "../../components/Loader/Loader";
 import Skill from "../../components/Skill/Skill";
 import { Container } from "../../components/SharedLayout/SharedLayout.styled";
@@ -26,13 +26,12 @@ const Course = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/";
 
-  const { id } = useParams();
-  wiseyAPI.courseID = id;
+  const { id } = useParams(); 
 
   useEffect(() => {
     const getResults = async () => {
       try {
-        const res = await wiseyAPI.getCourseById();
+        const res = await wiseyAPI.getCourseById(id);
         setCourse(res);
       } catch (error) {
         toast.error(error.message);
@@ -58,7 +57,7 @@ const Course = () => {
         return "";
       }
       if (lessonId === "locked") {
-        toast.error("Current video is locked");
+        toast.error("Current video is locked...");
         return "";
       }
       return lessonId;
@@ -88,19 +87,10 @@ const Course = () => {
           </DescrWrapper>
         </StyledCourse>
         <h3>Course Lessons: </h3>
-        <ul>
-          {course.lessons?.map((lesson, i) => {
-            return (
-              <Lesson
-                key={lesson.id}
-                lesson={lesson}
-                i={i}
-                openLesson={openLesson}
-                toggleLessonVideo={toggleLessonVideo}
-              />
-            );
-          })}
-        </ul>
+        <LessonsList
+          lessons={course.lessons}
+          openLesson={openLesson}
+          toggleLessonVideo={toggleLessonVideo}/>        
       </Container>
     </StyledSection>
   );
