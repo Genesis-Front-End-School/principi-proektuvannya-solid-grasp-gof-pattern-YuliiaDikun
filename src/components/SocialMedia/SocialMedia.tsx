@@ -3,7 +3,7 @@ import { ImLinkedin, ImGithub, ImTwitter } from "react-icons/im";
 import { SocialLinksWrapper } from './SocialMedia.styled';
 const SocialMedia:React.FC = () => {
   return (
-    <SocialLinksWrapper>
+    <SocialLinksWrapper data-testid="footer-social">
       <a
         data-testid="linkedin"
         href="https://www.linkedin.com/in/yuliia-dikun/"
