@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
-import { Header, Wrapper } from "./SharedLayout.style";
+import { Header, Wrapper } from './SharedLayout.styled';
 const SharedLayout:React.FC = () => {
   return (
     <Wrapper>
