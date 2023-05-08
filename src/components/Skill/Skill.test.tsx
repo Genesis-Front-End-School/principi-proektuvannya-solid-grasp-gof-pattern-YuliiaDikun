@@ -2,22 +2,13 @@ import { render, screen } from '@testing-library/react';
 import Skill from './Skill';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
-
-const mockSkills = {
-  skills: [
-    'Memorization techniques',
-    'Balanced perfectionism ',
-    'Learning techniques',
-    'Education styles',
-    'Finding motivation',
-  ],
-};
+import { mockSkills } from '../../__mocks__/mock_skills';
 
 describe('Skill component', () => {
   it('renders skills list if skills are provided', () => {
     render(
       <ThemeProvider theme={theme}>
-        <Skill skills={mockSkills.skills} />{' '}
+        <Skill skills={mockSkills} />{' '}
       </ThemeProvider>,
     );
 
