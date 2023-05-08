@@ -1,4 +1,5 @@
-[  
+import { ICoursesItem} from "../interfaces/Courses"
+export const mockCourses:ICoursesItem[] = [  
   {
     "id": "6cd0d6ac-4462-4154-bece-6590ad307b76",
     "title": "Cognitive psychology: hack your mind",

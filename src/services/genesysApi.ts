@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import { ICoursesItem } from '../interfaces/Courses';
+
 class WiseyAPI {
   private baseURL: string;
 

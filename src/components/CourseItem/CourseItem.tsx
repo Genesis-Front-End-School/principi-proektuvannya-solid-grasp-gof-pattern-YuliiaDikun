@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import videojs, { VideoJsPlayer } from "video.js";
+import { VideoJsPlayer } from "video.js";
 import { useLocation } from "react-router-dom";
 import { CourseItemProps } from "../../interfaces/Courses";
 import { MdOutlinePlayLesson } from "react-icons/md";
@@ -20,7 +20,7 @@ const CourseItem:React.FC<CourseItemProps> = ({ course }) => {
   const location = useLocation();
   const { id, previewImageLink, title, lessonsCount, meta, rating } = course;
 
-  const handlePlayerReady = (player:videojs.Player) => {
+  const handlePlayerReady = (player:VideoJsPlayer) => {
     playerRef.current = player;
     player.muted(true);
     function handlePlay() {
@@ -62,11 +62,11 @@ const CourseItem:React.FC<CourseItemProps> = ({ course }) => {
           )}
         </ImgWrapper>
         <DescWrapper>
-          <CourseText>{title}</CourseText>
+          <CourseText data-testid="course-link">{title}</CourseText>
           <RatingWrapper>
             <p>
               Available Lessons:
-              <span>{lessonsCount}</span>
+              <span data-testid="course-lessonCount">{lessonsCount}</span>
               <MdOutlinePlayLesson size={20} />
             </p>
             <p>
