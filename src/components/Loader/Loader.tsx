@@ -4,7 +4,7 @@ import { LoaderWrapper } from './Loader.styled';
 
 export default function Loader() {
   return (
-    <LoaderWrapper>
+    <LoaderWrapper  data-testid="loader">
       <ThreeCircles
         color={theme.colors.accent}
         innerCircleColor={theme.colors.dark}

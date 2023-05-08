@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import videojs from "video.js";
-import { VideoJsPlayer } from "video.js";
+import videojs, { VideoJsPlayer } from "video.js";
 import { IVideoJSProps } from "../../interfaces/Video";
 import "video.js/dist/video-js.css";
 import { VideoWrapper } from "./VideoJS.styled";
@@ -16,14 +15,14 @@ export const VideoJS: React.FC<IVideoJSProps> = ({ options, onReady, preview }) 
 
       videoElement.className = "video-js vjs-big-play-centered";
       videoRef.current?.appendChild(videoElement);
-
-      const player = (playerRef.current = videojs(
+      
+      const player = videojs(
         videoElement,
         options,
         () => {
           onReady && onReady(player);
         }
-      ));
+      );
     } else {
       const player = playerRef.current;
 
@@ -44,7 +43,7 @@ export const VideoJS: React.FC<IVideoJSProps> = ({ options, onReady, preview }) 
   }, [playerRef]);
 
   return (
-    <VideoWrapper preview={preview} data-vjs-player>
+    <VideoWrapper preview={preview} data-vjs-player data-testid="video-js-element">
       <div ref={videoRef} />
     </VideoWrapper>
   );

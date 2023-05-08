@@ -50,7 +50,7 @@ const Lesson: React.FC<LessonProps> = ({
     setProgressBarStyles(updatedProgressBarStyles);
   }, [duration, lessonTime]);
 
-  const handlePlayerReady = (player: any) => {
+  const handlePlayerReady = (player) => {
     playerRef.current = player;
     player.currentTime(lessonTime);
     function getTime() {

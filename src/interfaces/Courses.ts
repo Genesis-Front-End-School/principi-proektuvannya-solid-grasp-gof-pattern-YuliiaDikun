@@ -24,7 +24,7 @@ export interface ICoursesItem {
   lessons?: ILessonItem[];
   status: string;
   description: string;
-  duration: string;
+  duration: number;
   lessonsCount: number;
   containsLockedLessons: boolean;
   previewImageLink: string;

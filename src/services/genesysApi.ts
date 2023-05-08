@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { toast } from "react-toastify";
+import { ICoursesItem } from '../interfaces/Courses';
 
 class WiseyAPI {
   private baseURL: string;
@@ -26,8 +27,8 @@ class WiseyAPI {
   async getCourses() {
     try {
       await this.getToken();
-      const res = await axios.get(`${this.baseURL}/core/preview-courses`);
-      return res.data;
+      const resp = await axios.get(`${this.baseURL}/core/preview-courses`);      
+      return resp.data as ICoursesItem[];
     } catch (error) {
       toast.error("Something goes wrong.");
     }
@@ -36,8 +37,8 @@ class WiseyAPI {
   async getCourseById(id: string) {
     try {
       await this.getToken();
-      const res = await axios.get(`${this.baseURL}/core/preview-courses/${id}`);
-      return res.data;
+      const res = await axios.get(`${this.baseURL}/core/preview-courses/${id}`);      
+      return res.data as ICoursesItem;
     } catch (error) {
       toast.error("Something goes wrong.");
     }
