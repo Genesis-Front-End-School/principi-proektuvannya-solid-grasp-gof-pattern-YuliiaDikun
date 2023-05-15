@@ -1,7 +1,7 @@
-import React from 'react'
+import { FC} from 'react'
 import { ImLinkedin, ImGithub, ImTwitter } from "react-icons/im";
 import { SocialLinksWrapper } from './SocialMedia.styled';
-const SocialMedia:React.FC = () => {
+const SocialMedia:FC = () => {
   return (
     <SocialLinksWrapper>
       <a

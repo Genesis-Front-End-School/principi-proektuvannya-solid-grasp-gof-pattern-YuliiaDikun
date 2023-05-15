@@ -1,6 +1,7 @@
+import { FC } from "react";
 import { StyledP } from "./SkillsList.styled";
 import { ISkillProp } from "../../interfaces/Skills";
-const SkillsList: React.FC<ISkillProp> = ({ skills }) => {    
+const SkillsList: FC<ISkillProp> = ({ skills }) => {    
   return (
     <ul>
       {skills?.map((skill, i) => {

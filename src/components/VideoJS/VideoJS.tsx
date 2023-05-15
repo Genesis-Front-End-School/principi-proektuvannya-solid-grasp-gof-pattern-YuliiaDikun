@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import {FC, useEffect, useRef } from "react";
 import videojs from "video.js";
 import { VideoJsPlayer } from "video.js";
 import { IVideoJSProps } from "../../interfaces/Video";
@@ -6,7 +6,7 @@ import "video.js/dist/video-js.css";
 import { VideoWrapper } from "./VideoJS.styled";
 
 
-export const VideoJS: React.FC<IVideoJSProps> = ({ options, onReady, preview }) => {
+export const VideoJS: FC<IVideoJSProps> = ({ options, onReady, preview }) => {
   const videoRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<VideoJsPlayer | null>(null); 
 

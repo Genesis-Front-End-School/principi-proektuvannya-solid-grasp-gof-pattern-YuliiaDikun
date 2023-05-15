@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  {FC, useEffect, useState } from 'react';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { useParams, useLocation } from 'react-router-dom';
 import wiseyAPI from '../../services/genesysApi';
@@ -6,7 +6,7 @@ import LessonsList from '../../components/LessonsList/LessonsList';
 import Loader from '../../components/Loader/Loader';
 import Skill from '../../components/Skill/Skill';
 import { ICoursesItem } from '../../interfaces/Courses';
-import { Container } from '../../components/SharedLayout/SharedLayout.style';
+import { Container } from '../../components/SharedLayout/SharedLayout.styled';
 import {
   StyledSection,
   StyledCourse,
@@ -18,7 +18,7 @@ import {
 } from './Course.styled';
 import { toast } from 'react-toastify';
 
-const Course: React.FC = () => {
+const Course:FC = () => {
   const [course, setCourse] = useState<ICoursesItem | null>(null);
   const [openLesson, setOpenLesson] = useState('');
   const [isLoading, setIsLoading] = useState(true);

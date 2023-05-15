@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import  { FC, useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import wiseyAPI from '../../services/genesysApi';
 import { sortedByDate } from '../../helpers/sortedByDate';
-import { Container } from '../../components/SharedLayout/SharedLayout.style';
+import { Container } from '../../components/SharedLayout/SharedLayout.styled';
 import Logo from '../../components/Logo/Logo';
 import CourseList from '../../components/CourseList/CourseList';
 import Loader from '../../components/Loader/Loader';
@@ -14,7 +14,7 @@ import { toast } from 'react-toastify';
 const PAGE_SIZE = 10;
 const FIRST_PAGE = '1';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [courses, setCourses] = useState<ICoursesItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);

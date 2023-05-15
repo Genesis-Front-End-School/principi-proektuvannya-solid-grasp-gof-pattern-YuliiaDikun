@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { VideoJsPlayer } from 'video.js';
 import throttle from 'lodash.throttle';
 import { ImBlocked } from 'react-icons/im';
 import VideoJS from '../VideoJS/VideoJS';
-import { LessonProps, IProgressBarStyles } from '../../interfaces/Courses';
+import { ILessonProps, IProgressBarStyles } from '../../interfaces/Courses';
 import {
   VideoItem,
   LessonTitle,
@@ -14,7 +14,7 @@ import {
   ProgressBar,
 } from './Lesson.styled';
 
-const Lesson: React.FC<LessonProps> = ({
+const Lesson: FC<ILessonProps> = ({
   lesson,
   i,
   openLesson,
@@ -22,7 +22,7 @@ const Lesson: React.FC<LessonProps> = ({
 }) => {
   const { id, title, status, link, previewImageLink, order, duration } = lesson;
 
-  const playerRef = useRef<null | VideoJsPlayer>(null);
+  const playerRef = useRef<VideoJsPlayer>();
 
   const [progressBarStyles, setProgressBarStyles] = useState<IProgressBarStyles>({
     width: '0%',

@@ -1,10 +1,10 @@
-import React, { Suspense} from "react";
+import  {FC, Suspense} from "react";
 import { Outlet } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
-import { Header, Wrapper } from "./SharedLayout.style";
-const SharedLayout:React.FC = () => {
+import { Header, Wrapper } from './SharedLayout.styled';
+const SharedLayout:FC = () => {
   return (
     <Wrapper>
       <Header>

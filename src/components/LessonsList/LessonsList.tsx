@@ -1,8 +1,8 @@
-import React from "react";
+import { FC} from "react";
 import Lesson from "../Lesson/Lesson";
 import { ILessonListProp } from "../../interfaces/Courses";
 
-const LessonsList:React.FC<ILessonListProp> = ({ lessons, openLesson, toggleLessonVideo }) => {
+const LessonsList:FC<ILessonListProp> = ({ lessons, openLesson, toggleLessonVideo }) => {
   return (
     <ul>
       {lessons?.map((lesson, i) => {

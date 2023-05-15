@@ -1,13 +1,13 @@
 import { usePagination, DOTS } from '../../hooks/usePagination';
 import { IPaginationProps } from '../../interfaces/Pagination';
-import React from 'react';
+import { FC} from 'react';
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
 } from 'react-icons/md';
 import { PaginationContainer, PaginationItem, StyledDOTS } from './Pagination.styled';
 
-const Pagination: React.FC<IPaginationProps> = ({
+const Pagination:FC<IPaginationProps> = ({
   onPageChange,
   totalCount,
   siblingCount = 1,

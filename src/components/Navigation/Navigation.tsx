@@ -1,7 +1,7 @@
-import React from "react";
+import { FC} from "react";
 import Logo from "../Logo/Logo";
 import { HeaderWrapper, NavList, StyledLink } from "./Navigation.styled";
-const Navigation:React.FC = () => {
+const Navigation:FC = () => {
   return (
     <HeaderWrapper>
       <Logo/>

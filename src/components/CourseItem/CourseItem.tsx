@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import { FC, useRef } from "react";
 import videojs, { VideoJsPlayer } from "video.js";
 import { useLocation } from "react-router-dom";
-import { CourseItemProps } from "../../interfaces/Courses";
+import { ICourseItemProps } from "../../interfaces/Courses";
 import { MdOutlinePlayLesson } from "react-icons/md";
 import { FcRating } from "react-icons/fc";
 import VideoJS from "../VideoJS/VideoJS";
@@ -15,24 +15,18 @@ import {
   RatingWrapper,  
 } from "./CourseItem.styled";
 
-const CourseItem:React.FC<CourseItemProps> = ({ course }) => {  
-  const playerRef = useRef<null | VideoJsPlayer>(null);
+const CourseItem:FC<ICourseItemProps> = ({ course }) => {  
+  const playerRef = useRef<VideoJsPlayer>();
   const location = useLocation();
   const { id, previewImageLink, title, lessonsCount, meta, rating } = course;
 
   const handlePlayerReady = (player:videojs.Player) => {
     playerRef.current = player;
-    player.muted(true);
-    function handlePlay() {
-      player.play();
-    }
-    function handlePause() {
-      player.pause();
-    }
+    player.muted(true);    
     
-    player.on("mouseover", handlePlay);
+    player.on("mouseover", player.play);
 
-    player.on("mouseout", handlePause);
+    player.on("mouseout", player.pause);
   };
 
   const videoJsOptions = {    

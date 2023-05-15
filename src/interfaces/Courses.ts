@@ -44,7 +44,7 @@ export interface ICoursesList {
   memoCourses: ICoursesItem[];
 }
 
-export interface LessonProps {
+export interface ILessonProps {
   lesson: ILessonItem;
   i: number;
   openLesson: string;
@@ -57,6 +57,6 @@ export interface IProgressBarStyles {
   boxShadow?: string;
 }
 
-export interface CourseItemProps { 
+export interface ICourseItemProps { 
   course: ICoursesItem
 }
