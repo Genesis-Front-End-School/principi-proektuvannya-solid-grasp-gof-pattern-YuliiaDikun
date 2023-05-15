@@ -50,7 +50,7 @@ const Lesson: React.FC<LessonProps> = ({
     setProgressBarStyles(updatedProgressBarStyles);
   }, [duration, lessonTime]);
 
-  const handlePlayerReady = (player) => {
+  const handlePlayerReady = (player:VideoJsPlayer) => {
     playerRef.current = player;
     player.currentTime(lessonTime);
     function getTime() {
@@ -58,7 +58,7 @@ const Lesson: React.FC<LessonProps> = ({
         'lessons',
         JSON.stringify({
           ...lessonsFromLocalStorage,
-          [`${openLesson}`]: player.cache_.currentTime,
+          [`${openLesson}`]: player.currentTime,
         }),
       );
     }

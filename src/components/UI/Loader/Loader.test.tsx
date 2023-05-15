@@ -1,12 +1,12 @@
 import { screen, render } from "@testing-library/react";
 import Loader from "./Loader";
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 
 describe("Loader", () => {
   test("renders the loader", () => {
    render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <Loader />
       </ThemeProvider>,
     );

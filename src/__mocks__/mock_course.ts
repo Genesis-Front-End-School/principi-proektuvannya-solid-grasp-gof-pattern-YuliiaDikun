@@ -1,4 +1,4 @@
-import { ICoursesItem } from "../interfaces/Courses"
+import { ICoursesItem } from "../interfaces/Courses";
 export const mockCourse:ICoursesItem = {
   "id": "dd361e1f-9094-4103-81e1-bf4f4a0eb5f7",
   "title": "A Road to Healthy Relationships",

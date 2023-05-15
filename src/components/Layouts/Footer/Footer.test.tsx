@@ -2,13 +2,13 @@ import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 
 describe('Footer component', () => {
   it('renders logo and social media icons', () => {
     render(
       <MemoryRouter>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={lightTheme}>
           <Footer />
         </ThemeProvider>
       </MemoryRouter>,

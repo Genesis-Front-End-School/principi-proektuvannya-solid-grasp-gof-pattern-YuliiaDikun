@@ -1,10 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import { MyProps } from "./theme";
-export const GlobalStyleComponent = createGlobalStyle<MyProps>`
+import { MyThemeProps } from "./theme";
+export const GlobalStyleComponent = createGlobalStyle<MyThemeProps>`
 body {
   height: 100vh;
   color:${({ theme }) => theme.colors.dark};
   background-color: ${({ theme }) => theme.colors.mainBackground};
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
   img {
     display: block;

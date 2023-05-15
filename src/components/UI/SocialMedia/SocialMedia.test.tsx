@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { SocialMedia } from './SocialMedia';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 
 jest.mock('react-icons/im', () => ({
   ImLinkedin: () => <svg data-testid='linkedin-icon' />,
@@ -12,7 +12,7 @@ jest.mock('react-icons/im', () => ({
 describe('SocialMedia component', () => {
   it('renders component icons', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <SocialMedia />
       </ThemeProvider>,
     );
@@ -28,7 +28,7 @@ describe('SocialMedia component', () => {
 
   it('renders social media links', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <SocialMedia />
       </ThemeProvider>,
     );

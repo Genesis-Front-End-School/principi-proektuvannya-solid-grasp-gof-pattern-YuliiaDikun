@@ -23,9 +23,11 @@ const Courses: React.FC = () => {
   useEffect(() => {
     const getResults = async () => {
       try {
-        const { courses } = await wiseyAPI.getCourses();
-        const sortedCourses = sortedByDate(courses);
-        setCourses(sortedCourses);
+        const res = await wiseyAPI.getCourses();
+        if (res) {         
+          const sortedCourses = sortedByDate(res.courses);
+          setCourses(sortedCourses as ICoursesItem[]);
+        }
       } catch (error) {
         toast.error((error as Error).message);
       } finally {

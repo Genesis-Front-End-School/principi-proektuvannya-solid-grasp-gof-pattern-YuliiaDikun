@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import SkillsList from './SkillsList';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 import { mockSkills } from '../../../__mocks__/mock_skills';
 
 
 describe('SkillsList component', () => {
   it('renders a list of skills', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <SkillsList skills={mockSkills} />
       </ThemeProvider>,
     );

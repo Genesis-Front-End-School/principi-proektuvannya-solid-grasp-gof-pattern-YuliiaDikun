@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   min-height: 100vh;
@@ -34,4 +34,18 @@ export const Header = styled.header`
   z-index: 9;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.white};
+`;
+
+export const ThemeButton = styled.button`
+  width: ${({ theme }) => theme.spacing(8)};
+  height: ${({ theme }) => theme.spacing(8)};
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 6px;
+  top: 6px;
 `;

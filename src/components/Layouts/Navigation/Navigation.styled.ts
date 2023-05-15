@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap:${({ theme }) => theme.spacing(3)};
-  padding: ${({ theme }) => theme.spacing(4)};
+  padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(12)};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
   max-width: ${({ theme }) => theme.media.desktop};
   margin: 0 auto;

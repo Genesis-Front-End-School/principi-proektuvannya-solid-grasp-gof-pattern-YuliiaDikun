@@ -32,7 +32,7 @@ const Course: React.FC = () => {
       try {
         if (!id) return;
         const res = await wiseyAPI.getCourseById(id);
-        setCourse(res);
+        setCourse(res as ICoursesItem);
       } catch (error) {
         toast.error((error as Error).message);
       } finally {

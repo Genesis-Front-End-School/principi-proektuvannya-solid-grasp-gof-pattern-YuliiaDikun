@@ -3,13 +3,13 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import Logo from './Logo';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 
 describe('Logo component', () => {
   it('renders the logo text', () => {
     render(
       <MemoryRouter>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={lightTheme}>
           <Logo />
         </ThemeProvider>
       </MemoryRouter>,
@@ -22,7 +22,7 @@ describe('Logo component', () => {
   it('redirects to home page when clicked', () => {
     const { container } = render(
       <MemoryRouter>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={lightTheme}>
           <Logo />
         </ThemeProvider>
       </MemoryRouter>,

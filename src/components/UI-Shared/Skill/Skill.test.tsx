@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import Skill from './Skill';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import { lightTheme } from '../../../styles/theme';
 import { mockSkills } from '../../../__mocks__/mock_skills';
 
 describe('Skill component', () => {
   it('renders skills list if skills are provided', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <Skill skills={mockSkills} />{' '}
       </ThemeProvider>,
     );
@@ -18,7 +18,7 @@ describe('Skill component', () => {
 
   it('renders a message if no skills are provided', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <Skill skills={null} />
       </ThemeProvider>,
     );
