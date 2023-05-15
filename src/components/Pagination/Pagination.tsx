@@ -1,13 +1,17 @@
 import { usePagination, DOTS } from '../../hooks/usePagination';
 import { IPaginationProps } from '../../interfaces/Pagination';
-import { FC} from 'react';
+import { FC } from 'react';
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
 } from 'react-icons/md';
-import { PaginationContainer, PaginationItem, StyledDOTS } from './Pagination.styled';
+import {
+  PaginationContainer,
+  PaginationItem,
+  StyledDOTS,
+} from './Pagination.styled';
 
-const Pagination:FC<IPaginationProps> = ({
+const Pagination: FC<IPaginationProps> = ({
   onPageChange,
   totalCount,
   siblingCount = 1,
@@ -42,11 +46,12 @@ const Pagination:FC<IPaginationProps> = ({
       {/* Left navigation arrow */}
       <PaginationItem disabled={currentPage === 1} onClick={onPrevious}>
         <MdOutlineArrowBackIosNew size={20} />
-      </PaginationItem> 
+      </PaginationItem>
       {paginationRange.map((pageNumber, i) => {
         // If the pageItem is a DOT, render the DOTS unicode character
-        if (pageNumber === DOTS) {
-          return <StyledDOTS key={i}>&#8230;</StyledDOTS>;
+        // eslint-disable-next-line
+        {
+          pageNumber === DOTS && <StyledDOTS key={i}>&#8230;</StyledDOTS>;
         }
 
         // Render our Page Pills
