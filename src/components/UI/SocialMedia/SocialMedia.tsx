@@ -1,6 +1,24 @@
 import React from 'react'
 import { ImLinkedin, ImGithub, ImTwitter } from "react-icons/im";
-import { SocialLinksWrapper } from './SocialMedia.styled';
+
+import styled from "styled-components";
+
+export const SocialLinksWrapper = styled.div`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(5)};
+ 
+  a {
+    color: ${({ theme }) => theme.colors.dark};
+    transition: color 0.3s;
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
+  }  
+`;
+
 const SocialMedia:React.FC = () => {
   return (
     <SocialLinksWrapper data-testid="footer-social">
