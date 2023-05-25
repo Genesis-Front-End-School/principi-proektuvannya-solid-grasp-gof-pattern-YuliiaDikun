@@ -1,17 +1,35 @@
-# Патерни програмування на основі бібліотеки axios
+# LEARNnow
 
-Я обрала бібліотеку axios, тому що вона використовується в проекті і мені було цікаво зрозуміти, як реалізуються паретни програмування у великих та складних бібліотеках.
-Аналіз частин коду: [репозиторій](https://github.com/axios/axios).
+## Architecture
 
-1. **Принцип одиничної відповідальності**
+![infrastructure](assets/Architecture.png);
 
-Axios виконує лише одну відповідальність - він здійснює HTTP-запити. Axios не відповідає за збереження даних або їх обробку, це завдання розподіляється між іншими частинами коду. Це дозволяє зберігати Axios досить простим і масштабованим. Також приклад одиничної відповідальності саме в коді бібліотеки, можна навести розділення між функціями з нормалізації заголовків [фрагмент](https://github.com/axios/axios/blob/v1.x/lib/core/AxiosHeaders.js#L8). Кожна функція виконує окрему дію та не пов'язана з іншими.
+Learn Now is an educational platform that allows you to choose from a variety of
+courses and watch video lessons. Additionally, Learn Now provides a
+user-friendly interface that makes it easy to navigate through the courses and
+lessons. The platform also tracks your progress through each lesson, so you
+always know where you left off.
 
-2. **Принцип заміщення Лісков:**
-   Для прикладу використаємо метод axios.create(). Цей метод повертає новий екземпляр Axios зі своїми власними налаштуваннями. Цей метод можна використовувати для створення окремих екземплярів Axios з різними налаштуваннями, такими як базовий URL, інтерсептори запиту та відповіді.
-   [фрагмент](https://github.com/axios/axios/blob/v1.x/lib/axios.js#L38)
+Whether you are a student looking to expand your knowledge or a professional
+seeking to improve your skills, Learn Now offers a wide range of courses that
+cater to different interests and goals. With its convenient features and
+comprehensive learning resources, Learn Now is an ideal platform for anyone who
+wants to learn at their own pace and on their own schedule.
 
-Цей приклад показує, що метод axios.create() повертає новий екземпляр Axios, з яким можна взаємодіяти окремо від основного екземпляру Axios. Це дозволяє налаштувати кожен екземпляр Axios для конкретної задачі, що дозволяє уникнути змішування налаштувань та зберігати чистоту коду.
+---
 
-3. **Принцип розділення інтерфейсів**
-   Axios підтримує різні HTTP-запити, такі як GET, POST, PUT, PATCH та DELETE [фрагмент](https://github.com/axios/axios/blob/2701911260a1faa5cc5e1afe437121b330a3b7bb/lib/core/Axios.js#L85). Усі ці методи можна використовувати у всіх місцях коду, де потрібно виконати HTTP-запит. Завдяки цьому код залишається чистим і зрозумілим, оскільки не потрібно створювати окремі методи для кожного типу HTTP-запиту.
+## NOTICE
+
+To ensure proper application functioning, it is recommended to:
+
+1. install **CORS plugin** for your browser;
+2. clone the repository ( **git clone
+   https://github.com/YuliiaDikun/learn-now.git** );
+3. install all dependencies( **npm install** )
+4. run the application on your local machine ( **npm start** ).
+
+CORS plugins will enable your browser to make requests to the Learn Now servers
+and retrieve the necessary data to display the platform's content. **Without
+these plugins**, you may experience difficulties accessing the platform or
+viewing certain features. We recommend checking with your browser's
+documentation or support forums for more information on installing CORS plugins.
